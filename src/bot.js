@@ -77,9 +77,9 @@ client.on('guildMemberRemove', member => {
     const txtChannel = member.guild.channels.cache.get(generalID)
     
     const embed = new MessageEmbed()
-    .setTitle(`${member.guild.name} hates you`)
+    .setTitle(`${member.guild.name} has rejected`)
     .setThumbnail(member.user.displayAvatarURL({dynamic: true, size: 512}))
-    .setDescription(`Goodbye, ${member.user.tag}`)
+    .setDescription(`${member.user.tag}`)
     .setFooter(`#picklerick`,member.user.displayAvatarURL({dynamic: true, size: 512}))
     .setTimestamp()
     .setColor('RANDOM')
