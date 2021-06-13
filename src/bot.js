@@ -10,10 +10,8 @@ const client = new Commando.CommandoClient({
     commandPrefix: config.prefix,
     disableEveryone: true,
 });
-const { MessageEmbed, VoiceConnection } = require('discord.js');
-const { connect } = require('http2');
-const { connected } = require('process');
-const { getEventListener } = require('events');
+const { MessageEmbed } = require('discord.js');
+
 
 
 /* friend user id variables */
