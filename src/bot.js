@@ -186,11 +186,11 @@ client.on('guildMemberSpeaking', speaking => {
 
     /* DELETE BOT-COMMAND MESSAGES */
 
-// client.on('message', message => {
-//     if (message.channel.id === botCommandChat) {
-//         setTimeout(() => { message.delete() }, 6000)
-//     }
-// });
+client.on('message', message => {
+    if (message.channel.id === botCommandChat) {
+        setTimeout(() => { message.delete() }, 6000)
+    }
+});
 
 
 
