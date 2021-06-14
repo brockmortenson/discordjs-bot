@@ -166,7 +166,7 @@ client.on('guildMemberSpeaking', speaking => {
         // console.log(speaking.voice.member)
         // speaking.voice.connection.player.broadcast.play()
 
-        broadcast.setMaxListeners().play(path.join(__dirname, 'soundBitEight.mp3'))
+        // broadcast.setMaxListeners().play(path.join(__dirname, 'soundBitEight.mp3'))
 
         // console.log('THE BROADCAST', broadcast)
 
@@ -181,6 +181,8 @@ client.on('guildMemberSpeaking', speaking => {
         // speaking.send('test')
     } else return;
 });
+
+// updating hosted bot
 
 
 
