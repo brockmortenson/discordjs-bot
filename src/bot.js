@@ -28,6 +28,12 @@ const botCommandChat = '853413179919695902';
 
 
 
+    /* audio bit */
+
+const audio = './cmds/misc/soundBitEight.mp3'
+
+
+
 /* BOT LOGIN */
 
 client.on('ready', () => {
@@ -156,31 +162,43 @@ client.on('message', (message) => {
 
     /* SPEAKING EVENT */
 
-client.on('guildMemberSpeaking', speaking => {
-        // speaking.voice.channelID
-    const broadcast = client.voice.createBroadcast();
-    const dispatcher = broadcast.play('./cmds/misc/soundBitEight.mp3')
+client.on('guildMemberSpeaking', async (member, speaking) => {
 
-    if (speaking.voice) {
-        // console.log(speaking)
-        // console.log(speaking.voice.member)
-        // speaking.voice.connection.player.broadcast.play()
+    if (member.user.id === brett) {
+        const connection = await member.voice.channel.join();
+        const dispatcher = connection.play(path.join(__dirname, './cmds/misc/soundBitSeven.mp3'), {volume: 3})
 
-        // broadcast.setMaxListeners().play(path.join(__dirname, 'soundBitEight.mp3'))
+        dispatcher.pause();
 
-        // console.log('THE BROADCAST', broadcast)
-
-        // client.voice.createBroadcast();
-        // client.voice.createBroadcast().play('./cmds/misc/soundBitEight.mp3')
-        
-        // broadcast.play(dispatcher)
-
-        // ('./cmds/misc/soundBitEight.mp3')
-        
-        // setTimeout(() => { speaking.voice.setChannel('853170046623678474') }, 3000)
-        // speaking.send('test')
-    } else return;
+        if (speaking) {
+            console.log('speaking');
+            dispatcher.resume();
+        }
+        if (speaking == false) {
+            console.log('silent');
+            dispatcher.pause();
+        }
+    }
 });
+
+// client.on('guildMemberSpeaking', async (member, speaking) => {
+
+//     if (member.user.id === brock) {
+//         const connection = await member.voice.channel.join();
+//         const dispatcher = connection.play(path.join(__dirname, './cmds/misc/soundBitSeven.mp3'), {volume: 3})
+
+//         dispatcher.pause();
+
+//         if (speaking) {
+//             // console.log('speaking');
+//             dispatcher.resume();
+//         }
+//         if (speaking == false) {
+//             // console.log('silent');
+//             dispatcher.pause();
+//         }
+//     }
+// });
 
 
 
