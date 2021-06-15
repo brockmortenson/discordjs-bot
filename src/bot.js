@@ -23,6 +23,7 @@ const brett = '445487271295188992';
 const bryce = '698688179678740520';
 const paul = '696813641135161434';
 const pete = '695418325941092453';
+const brady = '230140913811324928'
 const paulBot = '851903165125361774';
 const botCommandChat = '853413179919695902';
 
@@ -117,7 +118,6 @@ client.on('message', (message) => {
         } else return;
     }
 });
-// setTimeout(() => { message.reply('oh my hell jake stfu pls fuck') }, 3000)
 
 
 
@@ -162,43 +162,43 @@ client.on('message', (message) => {
 
     /* SPEAKING EVENT */
 
-client.on('guildMemberSpeaking', async (member, speaking) => {
+let target = null;
 
-    if (member.user.id === brett) {
+client.on('message', message => {
+    if (message.content === '/brock') {
+        target = brock
+    } else if (message.content === '/paul') {
+        target = paul
+    } else if (message.content === '/bryce') {
+        target = bryce
+    } else if (message.content === '/pete') {
+        target = pete
+    } else if (message.content === '/brett') {
+        target = brett
+    } else if (message.content === '/brady') {
+        target = brady
+    } else if (message.content === '/stop') {
+        target = null
+    }
+});
+
+client.on('guildMemberSpeaking', async (member, speaking) => {
+    if (member.user.id === target && target !== null) {
         const connection = await member.voice.channel.join();
         const dispatcher = connection.play(path.join(__dirname, './cmds/misc/soundBitSeven.mp3'), {volume: 3})
 
         dispatcher.pause();
 
         if (speaking) {
-            console.log('speaking');
+            // console.log('speaking');
             dispatcher.resume();
         }
         if (speaking == false) {
-            console.log('silent');
+            // console.log('silent');
             dispatcher.pause();
         }
     }
 });
-
-// client.on('guildMemberSpeaking', async (member, speaking) => {
-
-//     if (member.user.id === brock) {
-//         const connection = await member.voice.channel.join();
-//         const dispatcher = connection.play(path.join(__dirname, './cmds/misc/soundBitSeven.mp3'), {volume: 3})
-
-//         dispatcher.pause();
-
-//         if (speaking) {
-//             // console.log('speaking');
-//             dispatcher.resume();
-//         }
-//         if (speaking == false) {
-//             // console.log('silent');
-//             dispatcher.pause();
-//         }
-//     }
-// });
 
 
 
