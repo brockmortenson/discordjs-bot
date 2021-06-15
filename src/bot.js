@@ -149,7 +149,7 @@ client.on('message', (message) => {
     // const { voice } = message.member;
     // const { channel } = message.member.voice;
 
-    if (message.content === '/leave') {
+    if (message.content === '/bye') {
         if (!message.member.voice.channelID) {
             message.reply('You must be in a voice channel')
         } else {
