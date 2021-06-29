@@ -22,7 +22,7 @@ module.exports = class PlayAudioCommand extends Commando.Command {
         voice.channel
         .join()
         .then((connection) => {
-            connection.play(path.join(__dirname, 'soundBitThirteen.mp3'), {volume: 1.5})
+            connection.play(path.join(__dirname, 'soundBitThirteen.mp3'), {volume: 1.0})
         })
     }
 }
