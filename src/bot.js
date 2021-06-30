@@ -26,12 +26,8 @@ const pete = '695418325941092453';
 const brady = '230140913811324928'
 const paulBot = '851903165125361774';
 const botCommandChat = '853413179919695902';
-
-
-
-    /* audio bit */
-
-const audio = './cmds/misc/soundBitEight.mp3'
+const general = '853145041241505812';
+const mediaTxt = '854478168353013810';
 
 
 
@@ -206,6 +202,12 @@ client.on('guildMemberSpeaking', async (member, speaking) => {
 
 client.on('message', message => {
     if (message.channel.id === botCommandChat) {
+        setTimeout(() => { message.delete() }, 6000)
+    }
+});
+
+client.on('message', message => {
+    if (message.content === '!1' || '!2' || '!3' || '!4' || '!5' || '!6' || '!7' || '!8' || '!9' || '!10' || '!11' || '!12' || '!13') {
         setTimeout(() => { message.delete() }, 6000)
     }
 });
