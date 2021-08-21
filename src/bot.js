@@ -23,7 +23,8 @@ const brett = '445487271295188992';
 const bryce = '698688179678740520';
 const paul = '696813641135161434';
 const pete = '695418325941092453';
-const brady = '230140913811324928'
+const brady = '230140913811324928';
+const jens = '523324188187164682';
 const paulBot = '851903165125361774';
 const botCommandChat = '853413179919695902';
 const general = '853145041241505812';
@@ -173,6 +174,8 @@ client.on('message', message => {
         target = brett
     } else if (message.content === '/brady') {
         target = brady
+    } else if (message.content === '/jens') {
+        target = jens
     } else if (message.content === '/stop') {
         target = null
     }
