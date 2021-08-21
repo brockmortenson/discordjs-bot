@@ -210,7 +210,7 @@ client.on('message', message => {
 });
 
 client.on('message', message => {
-    if (message.content === '!1' || message.content === '!2' || message.content === '!3' || message.content === '!4' || message.content === '!5' || message.content === '!6' || message.content === '!7' || message.content === '!8' || message.content === '!9' || message.content === '!10' || message.content === '!11' || message.content === '!12' || message.content === '!13' || message.content === '/rick' || message.content === '/bye' || message.content === '/brock' || message.content === '/paul' || message.content === '/bryce' || message.content === '/pete' || message.content === '/brett' || message.content === '/brady') {
+    if (message.content === '!1' || message.content === '!2' || message.content === '!3' || message.content === '!4' || message.content === '!5' || message.content === '!6' || message.content === '!7' || message.content === '!8' || message.content === '!9' || message.content === '!10' || message.content === '!11' || message.content === '!12' || message.content === '!13' || message.content === '/rick' || message.content === '/bye' || message.content === '/brock' || message.content === '/paul' || message.content === '/bryce' || message.content === '/pete' || message.content === '/brett' || message.content === '/brady' || message.content === '/jens') {
         setTimeout(() => { message.delete() }, 6000)
     }
 });
